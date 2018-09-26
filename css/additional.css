@@ -44,3 +44,46 @@ html.loggedin .beforeLogin{ display:none; }
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+/* Forms */
+#filtertool-container { width: 100%;}
+.filtertool .filtertool-questions-form .filtertool-question { background: none;}
+.filtertool-questions-form{
+    background: var(--light);
+    padding: 15px;
+}
+
+.filtertool-nav button,
+.filtertool-groupingButton button,
+.filtertool-feedback-section button,
+button.filtertool-groupingButton {
+    margin: 0 20px 0 0;
+    padding: 0.4em 10px 0.4em 10px;
+    border: 0;
+    border-radius: 0;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1em;
+    line-height: 1.625em;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.filtertool-nav button:disabled,
+.filtertool-groupingButton button:disabled,
+.filtertool-feedback-section button:disabled,
+button.filtertool-groupingButton:disabled {
+   -webkit-transition: background 0.3s ease-in-out;
+   transition: background 0.3s ease-in-out;
+   background: var(--gray);
+   cursor: initial;
+}
+
+button.filtertool-question-help-text-button,
+button.filtertool-contentblock-toggle-button {
+  background-color: var(--primary);
+  color:#fff;
+  border: 0;
+  border-radius: 0;
+  padding: 0.4em 10px 0.4em 10px;
+}
