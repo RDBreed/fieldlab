@@ -8,4 +8,10 @@ jQuery(function($){
     return false;
 	});
 
+  $(".afterLogin button.close").click(function(){
+		$('.afterLogin .modal').toggleClass('hidden');
+		$('#naam-keuze').toggleClass('hidden');
+    return false;
+	});
+
 });

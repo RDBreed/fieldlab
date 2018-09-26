@@ -1,4 +1,18 @@
 
+@font-face {
+	font-family: 'rijksoverheidsanstextregular';
+	src: url('../font/rijksoverheidsanstexttt-regular_2_0-webfont.eot');
+	src: url('../font/rijksoverheidsanstexttt-regular_2_0-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../font/rijksoverheidsanstexttt-regular_2_0-webfont.woff2') format('woff2'),
+	url('../font/rijksoverheidsanstexttt-regular_2_0-webfont.woff') format('woff'),
+	url('../font/rijksoverheidsanstexttt-regular_2_0-webfont.ttf') format('truetype'),
+	url('../font/rijksoverheidsanstexttt-regular_2_0-webfont.svg#rijksoverheidsanstextregular') format('svg');
+	font-weight:normal; font-style:normal;
+}
+
+body {
+  	font-family: 'rijksoverheidsanstextregular';
+}
 
 .hidden {
   left:-9999px;
@@ -7,6 +21,7 @@
   z-index: -1;
 }
 .afterLogin { display: none; }
+.afterLogin .modal { display: block;}
 
 html.loggedin .afterLogin { display:block; }
 html.loggedin .beforeLogin { display:none; }
