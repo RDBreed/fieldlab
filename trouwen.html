@@ -257,15 +257,14 @@
 
   addLocalEventListener(
       document.getElementById('filtertool-container'), 'showresults-post', function (e) {
-        // console.log("Filtertool was loaded: ", e)
-        $('#first').toggleClass('hidden').insertAfter('#filtertool-container-contentblock-body-0 p:last-of-type');
-
         //insert
+        $('.filtertool-contentblock-body:contains("U en uw partner mogen elkaars achternaam gaan gebruiken. U kunt daarom uw achternaam wijzigen, maar dat hoeft niet. Uw achternaam wijzigen regelt u bij uw gemeente. U kunt uw keuze altijd weer veranderen.")').append($('#first'));
         $('.filtertool-contentblock-body:contains("U kunt uw voorgenomen huwelijk digitaal melden op de website van uw gemeente. U doet dit met uw DigiD. Maar u kunt ook een afspraak maken aan het loket van het gemeentehuis.")').append(
             $('#second'));
 
         //show
         $('.filtertool-contentblock-body #second').toggleClass('hidden');
+        $('.filtertool-contentblock-body #first').toggleClass('hidden');
         //get link to Tilburg
         $.get(
             'https://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="huwelijksaangifte")and(postcode=5011)').done(
