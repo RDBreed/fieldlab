@@ -345,13 +345,6 @@ h6, .h6 {
   font-weight: 300;
   line-height: 1.2; }
 
-.hidden {
-  left:-9999px;
-  top:-9999px;
-  position: absolute;
-  z-index: -1;
-}
-
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;

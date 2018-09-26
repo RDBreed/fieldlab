@@ -1,34 +1,12 @@
 
 
+.hidden {
+  left:-9999px;
+  top:-9999px;
+  position: absolute !important;
+  z-index: -1;
+}
 .afterLogin { display: none; }
 
 html.loggedin .afterLogin { display:block; }
 html.loggedin .beforeLogin { display:none; }
-/* 
-#filtertool-container button.filtertool-groupingButton {
-    font-family: "RO Sans", Calibri, sans-serif;
-    margin: 0 20px 0 0;
-    padding: 0.4em 10px 0.4em 10px;
-    border: 0;
-    border-radius: 0;
-    background-color: #01689b;
-    color: #fff;
-    font-size: 1em;
-    line-height: 1.625em;
-    font-weight: normal;
-    cursor: pointer;
-}
-
-#filtertool-container button:disabled {
-    -webkit-transition: background 0.3s ease-in-out;
-    transition: background 0.3s ease-in-out;
-    background: #cccccc;
-    cursor: initial;
-}
-
-.filtertool-questions-form {
-    background: #e5f0f9;
-    padding: 15px 0 0 15px;
-}
-
-.filtertool .filtertool-questions-form .filtertool-question { background:none;} */
