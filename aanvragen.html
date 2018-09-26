@@ -1,51 +1,58 @@
 <!DOCTYPE html>
-<!-- saved from url=(0093)https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html -->
-<html lang="nl-NL" class="loggedin"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="nl-NL"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>1overheid | Alle overheidszaken</title>
+  <title>Alle overheidszaken</title>
   <meta name="description" content="Prototype for the 1overheid application">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="shortcut icon" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/assets/img/favicon.ico?" type="image/x-icon">
-  <link rel="icon" sizes="192x192" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/assets/img/touch-icon.png">
-  <link rel="apple-touch-icon" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="./css/style.css">
-<script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script></head>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://www.contenttoolsrijksoverheid.nl/releases/v1-1.12/filtertool-client-v1-1.12.css">
+
+</head>
 
 <body cz-shortcut-listen="true">
   <header>
     <div class="container-fluid">
         <div class="notVisibleInFrame">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/index.html" class="navbar-brand">
-                    <img src="./img/een-overheid.svg" alt="1overheid">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/een-overheid.svg" alt="1overheid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="navbarNavDropdown" class="navBtns collapse justify-content-end">
+                    <div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Vul hier uw zoekterm in" aria-label="Recipient's username"
+                                   aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn-outline-secondary" type="submit">Zoek</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="dropdown loggedInElm">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Maarten
+                            Tobias
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="aanvragen.html">Mijn aanvragen</a>
-                            <a class="dropdown-item logoutBtn" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">Uitloggen</a>
+                            <a class="dropdown-item logoutBtn" href="#">Uitloggen</a>
                         </div>
                     </div>
                     <div class="loggedOutElm">
                         <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
-                            <img src="./img/digid-logo.svg" alt="digid">
+                            <img src="img/digid-logo.svg" alt="digid">
                         </button>
                     </div>
-                    <a class="btn btn-light" data-toggle="modal" data-target="#contactModal" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/contact.html">Contact</a>
+                    <a class="btn btn-light" data-toggle="modal" data-target="#contactModal" href="#">Contact</a>
                 </div>
             </nav>
         </div>
         <div class="visibleInFrame">
             <nav class="navbar navbar-light">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/index.html" class="navbar-brand">
-                    <img src="./img/een-overheid.svg" alt="1overheid">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/een-overheid.svg" alt="1overheid">
                 </a>
                 <div class="justify-content-end">
                     <div class="dropdown loggedInElm">
@@ -53,13 +60,13 @@
                             Maarten
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
-                            <a class="dropdown-item" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html">Mijn aanvragen</a>
-                            <a class="dropdown-item logoutBtn" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">Uitloggen</a>
+                            <a class="dropdown-item" href="aanvragen.html">Mijn aanvragen</a>
+                            <a class="dropdown-item logoutBtn" href="#">Uitloggen</a>
                         </div>
                     </div>
                     <div class="loggedOutElm">
                         <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
-                            <img src="./img/digid-logo.svg" alt="digid">
+                            <img src="img/digid-logo.svg" alt="digid">
                         </button>
                     </div>
                 </div>
@@ -74,7 +81,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="modal-header">
-                        <img src="./img/digid-logo.svg" alt="digid">Login met DigiD
+                        <img src="img/digid-logo.svg" alt="digid">Login met DigiD
                     </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
@@ -84,7 +91,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="gebruikersnaam">DigiD gebruikersnaam</label>
-                            <input type="text" class="form-control" id="gebruikersnaam" placeholder="DigiD gebruikersnaam" value="mdevries">
+                            <input type="text" class="form-control" id="gebruikersnaam" placeholder="DigiD gebruikersnaam" value="thetvoorbeeld">
                         </div>
                         <div class="form-group">
                             <label for="wachtwoord">Wachtwoord</label>
@@ -115,10 +122,10 @@
                             <a href="tel:1400">Bel naar 1400</a>
                         </li>
                         <li class="app">
-                            <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">App uw vraag naar 1400</a>
+                            <a href="#">App uw vraag naar 1400</a>
                         </li>
                         <li class="chat">
-                            <a class="openChat" data-toggle="modal" data-target="#chatModal" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">Direct chatten</a>
+                            <a class="openChat" data-toggle="modal" data-target="#chatModal" href="#">Direct chatten</a>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +152,7 @@
                             <div class="messages">
                                 <div class="message">
                                     <div class="avatar">
-                                        <img class="img-fluid" src="./img/avatar.jpg">
+                                        <img class="img-fluid" src="img/avatar.jpg">
                                     </div>
                                     <div class="content">
                                         <span class="name">Medewerker:</span>
@@ -183,19 +190,19 @@
         <h1>Mijn actuele overheidszaken</h1>
         <div class="module-cards">
             <div class="module-card">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand.html">
+                <a href="#">
                     <h2 class="align-middle">Bijstand</h2>
                     <p>Uw aanvraag voor bijstand is in behandeling. U krijgt een reactie over uiterlijk 8 weken.</p>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Bouwen en verbouwen</h2>
                     <p>Uw aanvraag voor een bouwvergunning is in behandeling. U krijgt een reactie over uiterlijk 2 weken.</p>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Rijbewijs</h2>
                     <p>Let op: uw rijbewijs verloopt over 2 maanden.</p>
                 </a>
@@ -206,127 +213,127 @@
         <h2 class="loggedInElm mt-4">Overige overheidszaken</h2>
         <div class="module-cards">
             <div class="module-card loggedOutElm">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand.html">
+                <a href="#">
                     <h2 class="align-middle">Bijstand</h2>
                 </a>
             </div>
             <div class="module-card inactive loggedOutElm">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Bouwen en verbouwen</h2>
                 </a>
             </div>
             <div class="module-card inactive loggedOutElm">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Rijbewijs</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Paspoort / Identiteitskaart</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Scheiden</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Trouwen / Geregistreerd partnerschap</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Kind adopteren</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Afval</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Asbest verwijderen</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Omgevingsvergunning / Bestemmingsplan</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Immigreren / Nederlander worden</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Emigreren</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Erkenning kind</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Geboorteaangifte en naamskeuze</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Hulp bij een handicap</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Re-integratie</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Huwelijk</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Klacht overheid / ambtelijk optreden</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Leerplicht</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Jeugdgezondheid</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Jeugdhulp</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Naamgebruik</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Overlijden</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Stemmen</h2>
                 </a>
             </div>
             <div class="module-card inactive">
-                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html#">
+                <a href="#">
                     <h2 class="align-middle">Verhuizen</h2>
                 </a>
             </div>
@@ -364,6 +371,6 @@
             </div>
         </div>
     </div>
-  <script src="./js/main.js"></script>
+  <script src="js/main.js"></script>
 
 </body></html>
