@@ -246,72 +246,6 @@
     showTitle: true,
     showDescription: true
   });
-
-  function addLocalEventListener(element, eventName, handler) {
-    if (element.addEventListener) {
-      element.addEventListener(eventName, handler);
-    } else { // IE voor versie 9
-      element.attachEvent('on' + eventName, handler);
-    }
-  }
-
-  addLocalEventListener(
-      document.getElementById('filtertool-container'), 'showresults-post', function (e) {
-        //insert
-        $('.filtertool-contentblock-body:contains("U en uw partner mogen elkaars achternaam gaan gebruiken. U kunt daarom uw achternaam wijzigen, maar dat hoeft niet. Uw achternaam wijzigen regelt u bij uw gemeente. U kunt uw keuze altijd weer veranderen.")').append($('#first'));
-        $('.filtertool-contentblock-body:contains("U kunt uw voorgenomen huwelijk digitaal melden op de website van uw gemeente. U doet dit met uw DigiD. Maar u kunt ook een afspraak maken aan het loket van het gemeentehuis.")').append(
-            $('#second'));
-
-        //show
-        $('.filtertool-contentblock-body #second').toggleClass('hidden');
-        $('.filtertool-contentblock-body #first').toggleClass('hidden');
-        //get link to Tilburg
-        $.get(
-            'https://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="huwelijksaangifte")and(postcode=5011)').done(
-            function (xml) {
-              var link = xml.getElementsByTagName("dcterms:identifier")[0];
-              if (link) {
-                $('#huwelijksaangifte-link').attr('href', link.textContent);
-              } else {
-                alert("Sorry, no link.");
-              }
-            });
-
-        //get personal data
-        $.ajax({
-          url: 'https://testen.solviteers.nl/MijnApp/api/v1/personen/950051998',
-          type: 'GET',
-          dataType: 'json',
-          success: function (json) {
-            $('.naam').text(json.voornamen + (json.voorvoegselGeslachtsnaam ? ' ' + json.voorvoegselGeslachtsnaam : '') + ' ' + json.geslachtsnaam);
-            $('.achternaam').text((json.voorvoegselGeslachtsnaam ? json.voorvoegselGeslachtsnaam + ' ' : '') + json.geslachtsnaam);
-            $('.partner-achternaam').text(
-                (json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') + json.partnerGeslachtsnaam);
-            $('.plaats').text(json.adres ? json.adres.woonplaats : '');
-
-            $('#radiobtn-achternaam').val((json.voorvoegselGeslachtsnaam ? json.voorvoegselGeslachtsnaam + ' ' : '') + json.geslachtsnaam);
-
-            $('#radiobtn-partner').val((json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') +
-                json.partnerGeslachtsnaam);
-
-            $('#radiobtn-achternaam-partner').val((json.voorvoegselGeslachtsnaam ? json.voorvoegselGeslachtsnaam + ' ' : '') + json.geslachtsnaam
-                + ' - ' + (json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') + json.partnerGeslachtsnaam);
-
-            $('#radiobtn-partner-achternaam').val((json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') +
-                json.partnerGeslachtsnaam + ' - ' + (json.voorvoegselGeslachtsnaam ? json.voorvoegselGeslachtsnaam + ' ' : '') + json.geslachtsnaam);
-
-          },
-          error: function () {
-            console.log('boo!');
-          },
-          beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization',
-                'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDExMTk5MTAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTM5MjUvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MzkyNS8ifQ.lxlaXPg7V8aMT5ViLanqUH6kBmCHx_VGN0oQ9wgNvUg');
-          }
-        });
-      }
-  );
-
 </script>
 <script src="js/functions.js"></script>
 
@@ -322,7 +256,7 @@
     Inloggen
     <img src="img/digid-logo.svg" alt="digid">
   </button>
-  <div class="afterLogin">
+  <div class="afterLogin achternaam-formulier">
     <dl>
       <dt>Naam</dt>
       <dd class="naam">Tobias Erik Simon Timo het Voorbeeld</dd>
@@ -368,7 +302,7 @@
               Uw keuze is verwerkt naar: <span id="selected-result"></span>
             </p>
             <p>
-              Uw zaaknummer is #000000
+              Uw zaaknummer is <span id="zaaknummer">#000000</span>
             </p>
           </div>
         </div>
