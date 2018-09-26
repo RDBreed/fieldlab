@@ -289,6 +289,17 @@
                 (json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') + json.partnerGeslachtsnaam);
             $('.plaats').text(json.adres ? json.adres.woonplaats : '');
 
+            $('#radiobtn-achternaam').val((json.voorvoegselGeslachtsnaam ? json.voorvoegselGeslachtsnaam + ' ' : '') + json.geslachtsnaam);
+
+            $('#radiobtn-partner').val((json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') +
+                json.partnerGeslachtsnaam);
+
+            $('#radiobtn-achternaam-partner').val((json.voorvoegselGeslachtsnaam ? json.voorvoegselGeslachtsnaam + ' ' : '') + json.geslachtsnaam
+                + ' - ' + (json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') + json.partnerGeslachtsnaam);
+
+            $('#radiobtn-partner-achternaam').val((json.partnerVoorvoegselGeslachtsnaam ? json.partnerVoorvoegselGeslachtsnaam + ' ' : '') +
+                json.partnerGeslachtsnaam + ' - ' + (json.voorvoegselGeslachtsnaam ? json.voorvoegselGeslachtsnaam + ' ' : '') + json.geslachtsnaam);
+
           },
           error: function () {
             console.log('boo!');
@@ -324,20 +335,20 @@
       <legend>U heeft vier opties</legend>
       <fieldset id="achternaam-fieldset">
         <div class="form-group">
-          <input type="radio" value="het Voorbeeld" name="achternaam">
-          <label for="achternaam">Uw eigen achternaam, dus: <span class="achternaam">het Voorbeeld</span></label>
+          <input type="radio" value="het Voorbeeld" id="radiobtn-achternaam" name="achternaam">
+          <label for="radiobtn-achternaam">Uw eigen achternaam, dus: <span class="achternaam">het Voorbeeld</span></label>
         </div>
         <div class="form-group">
-          <input type="radio" value="van Fieldlab" name="partner">
-          <label for="partner">De achternaam van uw partner, dus: <span class="partner-achternaam">van Fieldlab</span></label>
+          <input type="radio" value="van Fieldlab" id="radiobtn-partner" name="achternaam">
+          <label for="radiobtn-partner">De achternaam van uw partner, dus: <span class="partner-achternaam">van Fieldlab</span></label>
         </div>
         <div class="form-group">
-          <input type="radio" value="het Voorbeeld - van Fieldlab" name="achternaam-partner">
-          <label for="achternaam-partner">Uw eigen achternaam - de achternaam van uw partner, dus: <span class="achternaam">het Voorbeeld</span> - <span class="partner-achternaam">van Fieldlab</span></label>
+          <input type="radio" value="het Voorbeeld - van Fieldlab" id="radiobtn-achternaam-partner" name="achternaam">
+          <label for="radiobtn-achternaam-partner">Uw eigen achternaam - de achternaam van uw partner, dus: <span class="achternaam">het Voorbeeld</span> - <span class="partner-achternaam">van Fieldlab</span></label>
         </div>
         <div class="form-group">
-          <input type="radio" value="van Fieldlab - het Voorbeeld" name="partner-achternaam">
-          <label for="partner-achternaam">De achternaam van uw partner - uw eigen achternaam, dus: <span class="partner-achternaam">van Fieldlab</span> - <span class="achternaam">het Voorbeeld</span></label>
+          <input type="radio" value="van Fieldlab - het Voorbeeld" id="radiobtn-partner-achternaam" name="achternaam">
+          <label for="radiobtn-partner-achternaam">De achternaam van uw partner - uw eigen achternaam, dus: <span class="partner-achternaam">van Fieldlab</span> - <span class="achternaam">het Voorbeeld</span></label>
         </div>
         <input type="submit" class="submit" value="Versturen"/>
       </fieldset>
