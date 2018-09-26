@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html -->
+<html lang="nl-NL"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>1overheid | Bijstand - Check</title>
+  <meta name="description" content="Prototype for the 1overheid application">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/assets/img/favicon.ico?" type="image/x-icon">
+  <link rel="icon" sizes="192x192" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/assets/img/touch-icon.png">
+  <link rel="apple-touch-icon" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="./1overheid _ Bijstand - Check_files/style.css">
+<script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script></head>
+
+<body cz-shortcut-listen="true">
+  <header>
+    <div class="container-fluid">
+        <div class="notVisibleInFrame">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/index.html" class="navbar-brand">
+                    <img src="./1overheid _ Bijstand - Check_files/een-overheid.svg" alt="1overheid">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarNavDropdown" class="navBtns collapse justify-content-end">
+                    <div class="dropdown loggedInElm">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Maarten
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html">Mijn aanvragen</a>
+                            <a class="dropdown-item logoutBtn" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Uitloggen</a>
+                        </div>
+                    </div>
+                    <div class="loggedOutElm">
+                        <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
+                            <img src="./1overheid _ Bijstand - Check_files/digid-logo.svg" alt="digid">
+                        </button>
+                    </div>
+                    <a class="btn btn-light" data-toggle="modal" data-target="#contactModal" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+        <div class="visibleInFrame">
+            <nav class="navbar navbar-light">
+                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/index.html" class="navbar-brand">
+                    <img src="./1overheid _ Bijstand - Check_files/een-overheid.svg" alt="1overheid">
+                </a>
+                <div class="justify-content-end">
+                    <div class="dropdown loggedInElm">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Maarten
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html">Mijn aanvragen</a>
+                            <a class="dropdown-item logoutBtn" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Uitloggen</a>
+                        </div>
+                    </div>
+                    <div class="loggedOutElm">
+                        <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
+                            <img src="./1overheid _ Bijstand - Check_files/digid-logo.svg" alt="digid">
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+</header>
+
+<div class="modal fade loginmodal" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="modal-header" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-header">
+                        <img src="./1overheid _ Bijstand - Check_files/digid-logo.svg" alt="digid">Login met DigiD
+                    </h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="gebruikersnaam">DigiD gebruikersnaam</label>
+                            <input type="text" class="form-control" id="gebruikersnaam" placeholder="DigiD gebruikersnaam" value="mdevries">
+                        </div>
+                        <div class="form-group">
+                            <label for="wachtwoord">Wachtwoord</label>
+                            <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord" value="********">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="loginBtn">Inloggen</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="modal fade contactModal" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-header" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="contact-modal-header">Heeft u een vraag of hulp nodig?</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <p>U kunt op contact met ons opnemen via:</p>
+                    <ul>
+                        <li class="phone">
+                            <a href="tel:1400">Bel naar 1400</a>
+                        </li>
+                        <li class="app">
+                            <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">App uw vraag naar 1400</a>
+                        </li>
+                        <li class="chat">
+                            <a class="openChat" data-toggle="modal" data-target="#chatModal" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Direct chatten</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade chatModal" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chat-modal-header" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="chat-modal-header">Direct chatten</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        
+                            <div class="messages">
+                                <div class="message">
+                                    <div class="avatar">
+                                        <img class="img-fluid" src="./1overheid _ Bijstand - Check_files/avatar.jpg">
+                                    </div>
+                                    <div class="content">
+                                        <span class="name">Medewerker:</span>
+                                        <p>Goedemiddag, waarmee kan ik u helpen?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            
+                            <div class="messageForm">
+                                <div class="inputField">
+                                    <input class="form-control form-control-lg" type="text" placeholder="Typ hier uw vraag">
+                                </div>
+                                <div class="submitBtn">
+                                    <button type="button" class="btn btn-primary btn-lg">Verstuur</button>
+                                </div>
+                            </div>
+                            
+                        
+                    </div>
+                    <div class="modal-footer">
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  <main role="main">
+    <div class="container-fluid">
+      <div class="row">
+    <div class="col-lg-10 offset-lg-1 col-md-12">
+        <div class="container-fluid">
+            <div class="row align-items-end">
+                <div class="col-md-8 notVisibleInFrame">
+                    <h1>Heb ik recht op bijstand?</h1>
+                    <p>Vul uw situatie in en weet of u in aanmerking komt voor bijstand.</p>
+                </div>
+                <div class="col-md-4 text-right mb-3">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal">Heeft u een vraag?</button>
+                    <button type="button" class="btn btn-primary btn-sm notPreFilledElm ml-2" data-toggle="modal" data-target="#getDataWarning">Gegevens ophalen</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid checkContainer">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="questions" action="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-situatie.html">
+                <div class="question active">
+                    <div class="questionWrapper">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 questionHeader">
+                                <h2 class="visibleInFrame">Staat u ingeschreven in de gemeente Amersfoort?</h2>
+                                <h2 class="notVisibleInFrame">Staat u ingeschreven in een Nederlandse gemeente?</h2>
+                                <button class="toggleHint collapsed" type="button" data-toggle="collapse" data-target="#nl-check-hint-txt" aria-expanded="false" aria-controls="nl-check-hint-txt">Hint</button>
+                                <div class="hintTxt collapse" id="nl-check-hint-txt">
+                                    <p>Om in aanmerking te komen voor een bijstandsuitkering, moet u ingeschreven staan bij
+                                        een Nederlandse gemeente.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nl-check" id="nl-check1-li" value="ja" checked="">
+                                        <label class="form-check-label" for="nl-check1-li">
+                                            Ja
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nl-check" id="nl-check2-li" data-stop="country" value="nee">
+                                        <label class="form-check-label" for="nl-check2-li">
+                                            Nee
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notPreFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nl-check" id="nl-check1" value="ja">
+                                        <label class="form-check-label" for="nl-check1">
+                                            Ja
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="nl-check" id="nl-check2" data-stop="country" value="nee">
+                                        <label class="form-check-label" for="nl-check2">
+                                            Nee
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-stop-reason="country" class="reason">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                        <h2>U heeft geen recht op bijstand.</h2>
+                        <p>Om in aanmerking te komen voor een bijstandsuitkering, moet u ingeschreven staan bij een Nederlandse
+                            gemeente.</p>
+                        <h3>Wat is uw situatie?</h3>
+                        <ul>
+                            <li>
+                                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Ik zit nog in (elektronische) detentie of ben de afgelopen maand uit detentie gekomen</a>
+                            </li>
+                            <li>
+                                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Ik ben dakloos of ik verblijf op verschillende adressen</a>
+                            </li>
+                            <li>
+                                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Mijn situatie is anders</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary changeAwnser btn-sm">Antwoord wijzigen</button>
+                        <button type="button" class="btn btn-primary btn-sm ml-2" data-toggle="modal" data-target="#contactModal">Heeft u hulp nodig?</button>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="questionWrapper">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-sm-12 questionHeader">
+                                <h2>Wat is uw leeftijd?</h2>
+                                <button class="toggleHint collapsed" type="button" data-toggle="collapse" data-target="#age-check-hint-txt" aria-expanded="false" aria-controls="age-check-hint-txt">Hint</button>
+                                <div class="hintTxt collapse" id="age-check-hint-txt">
+                                    <p>Om in aanmerking te komen voor een bijstandsuitkering, moet u 18 jaar of ouder zijn.
+                                        Maar u mag nog niet uw AOW-leeftijd hebben bereikt.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age-check" id="age-check1-li" data-stop="age1" value="onder18">
+                                        <label class="form-check-label" for="age-check1-li">
+                                            Ik ben jonger dan 18 jaar
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age-check" id="age-check2-li" value="boven18" checked="">
+                                        <label class="form-check-label" for="age-check2-li">
+                                            Ik ben 18 jaar of ouder (nog geen AOW-leeftijd)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age-check" id="age-check3-li" data-stop="age2" value="bovenAow">
+                                        <label class="form-check-label" for="age-check3-li">
+                                            Ik heb mijn AOW-leeftijd bereikt
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notPreFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age-check" id="age-check1" data-stop="age1" value="onder18">
+                                        <label class="form-check-label" for="age-check1">
+                                            Ik ben jonger dan 18 jaar
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age-check" id="age-check2" value="boven18">
+                                        <label class="form-check-label" for="age-check2">
+                                            Ik ben 18 jaar of ouder (nog geen AOW-leeftijd)
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age-check" id="age-check3" data-stop="age2" value="bovenAow">
+                                        <label class="form-check-label" for="age-check3">
+                                            Ik heb de AOW-leeftijd bereikt
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-stop-reason="age1" class="reason">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                        <h2>U heeft geen recht op bijstand.</h2>
+                        <p>Om in aanmerking te komen voor een bijstandsuitkering, moet u 18 jaar of ouder zijn. Als u jonger
+                            bent dan 18 jaar zijn uw ouders of verzorgers nog financieel voor u verantwoordelijk.</p>
+                        <h3>Er zijn een aantal uitzonderingen:</h3>
+                        <ul>
+                            <li>
+                                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Zeer dringende redenen</a>
+                            </li>
+                            <li>
+                                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">U bent weggelopen van huis</a>
+                            </li>
+                            <li>
+                                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">U heeft zelf een kind</a>
+                            </li>
+                            <li>
+                                <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">U of uw ouders zijn illegaal in Nederland</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary changeAwnser btn-sm">Antwoord wijzigen</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal">Heeft u hulp nodig?</button>
+                    </div>
+
+                    <div data-stop-reason="age2" class="reason">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                        <h2>U heeft geen recht op bijstand.</h2>
+                        <p>Als u de AOW-leeftijd heeft bereikt, heeft u geen recht op bijstand. Misschien heeft u wel recht
+                            op een AOW-uitkering.</p>
+                        <h3>Aanvullende Inkomensvoorziening Ouderen (AIO)</h3>
+                        <p>Ontvangt u geen volledige AOW-uitkering en heeft u niet genoeg pensioen opgebouwd om uw inkomen aan
+                            te vullen? Dan heeft u misschien recht op de Aanvullende Inkomensvoorziening Ouderen (AIO). Deze
+                            inkomensvoorziening vult uw inkomen aan tot de hoogte van een volledige AOW-uitkering.</p>
+                        <p>
+                            <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html#">Wat is een AOW-uitkering?</a>
+                        </p>
+                        <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/aio-check.html" class="btn btn-primary btn-sm">Recht op de AIO?</a>
+                        <button type="button" class="btn btn-primary changeAwnser btn-sm ml-2">Antwoord wijzigen</button>
+                        <button type="button" class="btn btn-primary btn-sm ml-2" data-toggle="modal" data-target="#contactModal">Heeft u hulp nodig?</button>
+                    </div>
+                </div>
+
+                <div class="question">
+
+                    <div class="questionWrapper">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 questionHeader">
+                                <h2>Wat is uw leefsituatie/woonsituatie?</h2>
+                            </div>
+                        </div>
+                        <div class="preFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="env-check" id="env-check1-li" value="alleen" checked="">
+                                        <label class="form-check-label" for="env-check1-li">
+                                            Ik ben alleenstaand
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="env-check" id="env-check2-li" value="alleen-ouder">
+                                        <label class="form-check-label" for="env-check2-li">
+                                            Ik ben alleenstaande ouder
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="env-check" id="env-check3-li" value="samen">
+                                        <label class="form-check-label" for="env-check3-li">
+                                            Ik woon samen met mijn partner
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notPreFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="env-check" id="env-check1" value="alleen">
+                                        <label class="form-check-label" for="env-check1">
+                                            Ik ben alleenstaand
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="env-check" id="env-check2" value="alleen-ouder">
+                                        <label class="form-check-label" for="env-check2">
+                                            Ik ben alleenstaande ouder
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="env-check" id="env-check3" value="samen">
+                                        <label class="form-check-label" for="env-check3">
+                                            Ik woon samen met mijn partner
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+
+                    <div class="questionWrapper">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 questionHeader">
+                                <h2>Is uw inkomen lager dan € 1.500,- bruto per maand?</h2>
+                                <button class="toggleHint collapsed" type="button" data-toggle="collapse" data-target="#ink-check-hint-txt" aria-expanded="false" aria-controls="ink-check-hint-txt">Hint</button>
+                                <div class="hintTxt collapse" id="ink-check-hint-txt">
+                                    <p>Bijstand is er voor mensen die niet genoeg geld hebben om van te leven. Als u voldoende
+                                        inkomen heeft, heeft u geen recht op een bijstandsuitkering.</p>
+                                    <p class="h3">Wat telt mee als inkomen?</p>
+                                    <p>Salaris, uitkering, alimentatie en heffingskortingen van de belastingdienst.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ink-check" id="ink-check1-li" value="ja" checked="">
+                                        <label class="form-check-label" for="ink-check1-li">
+                                            Ja
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ink-check" id="ink-check2-li" data-stop="ink" value="nee">
+                                        <label class="form-check-label" for="ink-check2-li">
+                                            Nee
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notPreFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ink-check" id="ink-check1" value="ja">
+                                        <label class="form-check-label" for="ink-check1">
+                                            Ja
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ink-check" id="ink-check2" data-stop="ink" value="nee">
+                                        <label class="form-check-label" for="ink-check2">
+                                            Nee
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-stop-reason="ink" class="reason">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                        <h2>U heeft geen recht op bijstand.</h2>
+                        <p>Omdat u voldoende inkomen heeft.</p>
+                        <h3>Wat telt mee als inkomen?</h3>
+                        <p>Salaris, uitkering, alimentatie en heffingskortingen van de belastingdienst.</p>
+                        <button type="button" class="btn btn-primary changeAwnser btn-sm">Antwoord wijzigen</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal">Heeft u hulp nodig?</button>
+                    </div>
+                </div>
+
+                <div class="question">
+
+                    <div class="questionWrapper">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-12 questionHeader">
+                                <h2>Is uw vermogen lager dan € 6.020,-?</h2>
+                                <button class="toggleHint collapsed" type="button" data-toggle="collapse" data-target="#verm-check-hint-txt" aria-expanded="false" aria-controls="verm-check-hint-txt">Hint</button>
+                                <div class="collapse" id="verm-check-hint-txt">
+                                    <p>Bijstand is er voor mensen die niet genoeg geld hebben om van te leven. Als u voldoende
+                                        vermogen heeft, heeft u geen recht op een bijstandsuitkering.</p>
+                                    <p class="h3">Wat valt onder vermogen?</p>
+                                    <p>Onder vermogen vallen eigendommen, bijvoorbeeld waardevolle sieraden, een auto of spaargeld.
+                                        Ook grond of een huis in Nederland of in het buitenland horen tot het vermogen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="verm-check" id="verm-check1-li" value="ja" checked="">
+                                        <label class="form-check-label" for="verm-check1-li">
+                                            Ja
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="verm-check" id="verm-check2-li" data-stop="verm" value="nee">
+                                        <label class="form-check-label" for="verm-check2-li">
+                                            Nee
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notPreFilledElm">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="verm-check" id="verm-check1" value="ja">
+                                        <label class="form-check-label" for="verm-check1">
+                                            Ja
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="verm-check" id="verm-check2" data-stop="verm" value="nee">
+                                        <label class="form-check-label" for="verm-check2">
+                                            Nee
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-stop-reason="verm" class="reason">
+                        <div class="progress mb-4">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                        </div>
+                        <h2>U heeft geen recht op bijstand.</h2>
+                        <p>Omdat u voldoende vermogen heeft.</p>
+                        <h3>Wat valt onder vermogen?</h3>
+                        <p>Onder vermogen vallen eigendommen, bijvoorbeeld waardevolle sieraden, een auto of spaargeld. Ook
+                            grond of een huis in Nederland of in het buitenland horen tot het vermogen.</p>
+                        <button type="button" class="btn btn-primary changeAwnser btn-sm">Antwoord wijzigen</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#contactModal">Heeft u hulp nodig?</button>
+                    </div>
+                </div>
+
+                <div class="form-row formControls">
+                    <div class="col-sm-12">
+                        <button id="prev-question" type="button" class="btn btn-primary mr-2" style="display: none;">Vorige vraag</button>
+                        <button id="next-question" type="submit" class="btn btn-primary mr-2" disabled="disabled" style="display: inline-block;">Volgende vraag</button>
+                        <button id="show-results" type="button" class="btn btn-primary" disabled="disabled" style="display: none;">Toon resultaat</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade getDataInfo" id="getDataWarning" tabindex="-1" role="dialog" aria-labelledby="modal-header" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-header">
+                    <img src="./1overheid _ Bijstand - Check_files/digid-logo.svg" alt="digid">Login met DigiD om uw gegevens op te halen
+                </h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <p>We halen de volgende gegevens op:</p>
+                    <ul>
+                        <li>Persoonsgegevens bij uw gemeente</li>
+                        <li>Gegevens over uw inkomen en vermogen bij de Belastingdienst</li>
+                        <li>Gegevens over uw voertuigen bij de RDW</li>
+                        <li>Gegevens over eventuele Studiefinanciering bij DUO</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirmGetLoginModal" type="button" class="btn btn-primary loggedOutElm" data-dismiss="modal">Inloggen met DigiD</button>
+                    <button id="confirmGetData" type="button" class="btn btn-primary loggedInElm ml-2" data-dismiss="modal">Gegevens ophalen</button>
+                    <button type="button" class="btn btn-primary ml-2" data-dismiss="modal">Ik vul de vragen zelf in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        
+
+
+<div class="container-fluid resultsContainer hidden ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="resultWrapper whiteBlock">
+                
+                <div class="progress mb-4">
+                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+                
+                <h2>U komt in aanmerking voor bijstand</h2>
+                <ul>
+                    <li class="visibleInFrame">U bent ingeschreven in de gemeente Amersfoort</li>
+                    <li class="notVisibleInFrame">U bent ingeschreven in een Nederlandse gemeente</li>
+                    <li class="loggedInElm">U bent 45 jaar oud</li>
+                    <li class="loggedOutElm">U bent 18 jaar of ouder (nog geen AOW-leeftijd)</li>
+                    <li>U heeft geen fiscaal partner</li>
+                    <li>Uw inkomen is lager dan € 1.500,- bruto per maand</li>
+                    <li>Uw vermogen is minder dan € 6.020,-</li>
+                </ul>
+                
+                    <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/bijstand-check.html" class="btn btn-primary">Opnieuw beginnen</a>
+                    <button type="button" data-toggle="modal" data-target="#sendModal" class="btn btn-primary">Bijstand aanvragen</button>
+                    
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade sendModal" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="send-modal-header" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="send-modal-header">
+                    Uw aanvraag is verstuurd 
+                </h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <p>Wij hebben uw aanvraag voor een bijstandsuitkering in behandeling genomen. Binnen 8 weken krijgt u een beslissing op uw aanvraag. Heeft u recht op bijstand? Dan krijgt u dit vanaf het moment dat u de aanvraag heeft gedaan.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+    </div>
+  </main>
+  <footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <span class="align-middle lead">1overheid: voor al uw overheidszaken.</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade contactModal" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-header" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="contact-modal-header">
+                        Contact
+                    </h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+               
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Direct chatten</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  <script src="./1overheid _ Bijstand - Check_files/main.js"></script>
+
+</body></html>
