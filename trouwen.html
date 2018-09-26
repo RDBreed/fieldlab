@@ -246,7 +246,18 @@
       document.getElementById('filtertool-container'), 'showresults-post', function(e) {
         // console.log("Filtertool was loaded: ", e)
         $('#first').toggleClass('hidden').insertAfter('#filtertool-container-contentblock-body-0 p:last-of-type');
-        $('#second').toggleClass('hidden').insertAfter('#filtertool-container-contentblock-body-16 p:last-of-type');
+
+        $('.filtertool-contentblock-body:contains("U kunt uw voorgenomen huwelijk digitaal melden op de website van uw gemeente. U doet dit met uw DigiD. Maar u kunt ook een afspraak maken aan het loket van het gemeentehuis.")').append($('#second'));
+        $('.filtertool-contentblock-body #second').toggleClass('hidden');
+          $.get('http://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="huwelijksaangifte")and(postcode=5011)').done(function (xml) {
+            console.log(xml);
+            var rating = xml.getElementsByTagName("dcterms:identifier")[0];
+            if (rating) {
+              $('#huwelijksaangifte-link').attr('href', rating.textContent);
+            } else {
+              alert("Sorry, no rating.");
+            }
+          });
       }
     );
 
@@ -323,10 +334,14 @@
   </div>
 
   <div id="second" class="hidden">
-    <h3>Inject blok 2</h3>
-    <p>
-      Inhoud blok 2
+    <h3>Melden bij gemeente</h3>
+    <p class="beforeLogin">
+      <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
+        Inloggen
+        <img src="img/digid-logo.svg" alt="digid">
+      </button>
     </p>
+    <p class="afterLogin"><a href="#" id="huwelijksaangifte-link" target="_blank">Meld uw huwelijk bij uw gemeente Tilburg</a></p>
   </div>
 
 </body></html>
