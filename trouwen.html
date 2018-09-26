@@ -249,7 +249,7 @@
 
         $('.filtertool-contentblock-body:contains("U kunt uw voorgenomen huwelijk digitaal melden op de website van uw gemeente. U doet dit met uw DigiD. Maar u kunt ook een afspraak maken aan het loket van het gemeentehuis.")').append($('#second'));
         $('.filtertool-contentblock-body #second').toggleClass('hidden');
-          $.get('http://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="huwelijksaangifte")and(postcode=5011)').done(function (xml) {
+          $.get('https://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="huwelijksaangifte")and(postcode=5011)').done(function (xml) {
             console.log(xml);
             var rating = xml.getElementsByTagName("dcterms:identifier")[0];
             if (rating) {
