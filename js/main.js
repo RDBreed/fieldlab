@@ -15380,6 +15380,7 @@ function handleLogin(){
             $('html').addClass('preFilled');
             handleModuleForm();
         }
+        $('html').trigger( "login" );
     }
 
     function logout(){
@@ -15387,7 +15388,8 @@ function handleLogin(){
         $('html').removeClass('preFilled');
         sessionStorage.loginStatus = "loggedOut";
         sessionStorage.prefilStatus = "notPrefilled";
-        // location.reload();
+      	$('html').trigger( "logout" );
+				// location.reload();
     }
 }
 

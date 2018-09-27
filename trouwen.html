@@ -16,341 +16,313 @@
 </head>
 
 <body cz-shortcut-listen="true">
-  <header>
-    <div class="container-fluid">
-        <div class="notVisibleInFrame">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a href="index.html" class="navbar-brand">
-                    <img src="img/een-overheid.svg" alt="1overheid">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div id="navbarNavDropdown" class="navBtns collapse justify-content-end">
-                  <div>
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Vul hier uw zoekterm in" aria-label="Recipient's username"
-                             aria-describedby="basic-addon2">
-                      <div class="input-group-append">
-                        <button class="btn-outline-secondary search-btn" type="submit">&nbsp;</button>
-                      </div>
-                    </div>
-                  </div>
-                    <div class="dropdown loggedInElm">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Tobias
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="aanvragen.html">Mijn aanvragen</a>
-                            <button class="dropdown-item logoutBtn">Uitloggen</button>
-                        </div>
-                    </div>
-                    <div class="loggedOutElm">
-                        <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
-                            <img src="img/digid-logo.svg" alt="digid">
-                        </button>
-                    </div>
-                    <div class="blauwe-button">
-                      <a href="#" title="Blauwe Button">
-                        <img src="img/blauwe-knop.svg" title="Blauwe Button"  />
-                      </a>
-                    </div>
-                    <div>
-                      <a class="btn btn-light" data-toggle="modal" data-target="#contactModal" href="#">Contact</a>
-                    </div>
-                </div>
-            </nav>
+<header>
+  <div class="container-fluid">
+    <div class="notVisibleInFrame">
+      <nav class="navbar navbar-expand-md navbar-light">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/een-overheid.svg" alt="1overheid">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNavDropdown" class="navBtns collapse justify-content-end">
+          <div>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Vul hier uw zoekterm in" aria-label="Recipient's username"
+                     aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn-outline-secondary search-btn" type="submit">&nbsp;</button>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown loggedInElm">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+              Tobias
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="aanvragen.html">Mijn aanvragen</a>
+              <button class="dropdown-item logoutBtn">Uitloggen</button>
+            </div>
+          </div>
+          <div class="loggedOutElm">
+            <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
+              <img src="img/digid-logo.svg" alt="digid">
+            </button>
+          </div>
+          <div class="blauwe-button">
+            <a href="#" title="Blauwe Button">
+              <img src="img/blauwe-knop.svg" title="Blauwe Button"/>
+            </a>
+          </div>
+          <div>
+            <a class="btn btn-light" data-toggle="modal" data-target="#contactModal" href="#">Contact</a>
+          </div>
         </div>
-        <div class="visibleInFrame">
-            <nav class="navbar navbar-light">
-                <a href="index.html" class="navbar-brand">
-                    <img src="img/een-overheid.svg" alt="1overheid">
-                </a>
-                <div class="justify-content-end">
-                    <div class="dropdown loggedInElm">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Maarten
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
-                            <a class="dropdown-item" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html">Mijn aanvragen</a>
-                            <a class="dropdown-item logoutBtn" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/trouwen-check.html#">Uitloggen</a>
-                        </div>
-                    </div>
-                    <div class="loggedOutElm">
-                        <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
-                            <img src="img/digid-logo.svg" alt="digid">
-                        </button>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
+      </nav>
     </div>
+    <div class="visibleInFrame">
+      <nav class="navbar navbar-light">
+        <a href="index.html" class="navbar-brand">
+          <img src="img/een-overheid.svg" alt="1overheid">
+        </a>
+        <div class="justify-content-end">
+          <div class="dropdown loggedInElm">
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+              Maarten
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+              <a class="dropdown-item" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/alle-overheidszaken.html">Mijn
+                aanvragen</a>
+              <a class="dropdown-item logoutBtn" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/trouwen-check.html#">Uitloggen</a>
+            </div>
+          </div>
+          <div class="loggedOutElm">
+            <button type="button" class="btn btn-light loginBtn" data-toggle="modal" data-target="#loginForm">Inloggen
+              <img src="img/digid-logo.svg" alt="digid">
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </div>
 </header>
 
 <div class="modal fade loginmodal" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="modal-header" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="modal-header">
-                        <img src="img/digid-logo.svg" alt="digid">Login met DigiD
-                    </h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <form>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="gebruikersnaam">DigiD gebruikersnaam</label>
-                            <input type="text" class="form-control" id="gebruikersnaam" placeholder="DigiD gebruikersnaam" value="thetvoorbeeld">
-                        </div>
-                        <div class="form-group">
-                            <label for="wachtwoord">Wachtwoord</label>
-                            <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord" value="********">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" id="loginBtn">Inloggen</button>
-                    </div>
-                </form>
-            </div>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-header">
+          <img src="img/digid-logo.svg" alt="digid">Login met DigiD
+        </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="gebruikersnaam">DigiD gebruikersnaam</label>
+            <input type="text" class="form-control" id="gebruikersnaam" placeholder="DigiD gebruikersnaam" value="thetvoorbeeld">
+          </div>
+          <div class="form-group">
+            <label for="wachtwoord">Wachtwoord</label>
+            <input type="password" class="form-control" id="wachtwoord" placeholder="Wachtwoord" value="********">
+          </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="loginBtn">Inloggen</button>
+        </div>
+      </form>
     </div>
+  </div>
+</div>
 <div class="modal fade contactModal" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-header" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="contact-modal-header">Heeft u een vraag of hulp nodig?</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <form>
-                <div class="modal-body">
-                    <p>U kunt op contact met ons opnemen via:</p>
-                    <ul>
-                        <li class="phone">
-                            <a href="tel:1400">Bel naar 1400</a>
-                        </li>
-                        <li class="app">
-                            <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/trouwen-check.html#">App uw vraag naar 1400</a>
-                        </li>
-                        <li class="chat">
-                            <a class="openChat" data-toggle="modal" data-target="#chatModal" href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/trouwen-check.html#">Direct chatten</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-
-                </div>
-            </form>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="contact-modal-header">Heeft u een vraag of hulp nodig?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <p>U kunt op contact met ons opnemen via:</p>
+          <ul>
+            <li class="phone">
+              <a href="tel:1400">Bel naar 1400</a>
+            </li>
+            <li class="app">
+              <a href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/trouwen-check.html#">App uw vraag naar 1400</a>
+            </li>
+            <li class="chat">
+              <a class="openChat" data-toggle="modal" data-target="#chatModal"
+                 href="https://git.rijksoverheid.nl/platform-templates/misc/1overheid/build/trouwen-check.html#">Direct chatten</a>
+            </li>
+          </ul>
         </div>
+        <div class="modal-footer">
+
+        </div>
+      </form>
     </div>
+  </div>
 </div>
 
 <div class="modal fade chatModal" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chat-modal-header" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="chat-modal-header">Direct chatten</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <form>
-                    <div class="modal-body">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="chat-modal-header">Direct chatten</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body">
 
-                            <div class="messages">
-                                <div class="message">
-                                    <div class="avatar">
-                                        <img class="img-fluid" src="img/avatar.svg">
-                                    </div>
-                                    <div class="content">
-                                        <span class="name">Medewerker:</span>
-                                        <p>Goedemiddag, waarmee kan ik u helpen?</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="messageForm">
-                                <div class="inputField">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Typ hier uw vraag">
-                                </div>
-                                <div class="submitBtn">
-                                    <button type="button" class="btn btn-primary btn-lg">Verstuur</button>
-                                </div>
-                            </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-
-                    </div>
-                </form>
+          <div class="messages">
+            <div class="message">
+              <div class="avatar">
+                <img class="img-fluid" src="img/avatar.svg">
+              </div>
+              <div class="content">
+                <span class="name">Medewerker:</span>
+                <p>Goedemiddag, waarmee kan ik u helpen?</p>
+              </div>
             </div>
+          </div>
+
+
+          <div class="messageForm">
+            <div class="inputField">
+              <input class="form-control form-control-lg" type="text" placeholder="Typ hier uw vraag">
+            </div>
+            <div class="submitBtn">
+              <button type="button" class="btn btn-primary btn-lg">Verstuur</button>
+            </div>
+          </div>
+
+
         </div>
+        <div class="modal-footer">
+
+        </div>
+      </form>
     </div>
-  <main role="main">
-    <div class="container-fluid">
-      <div class="row">
+  </div>
+</div>
+<main role="main">
+  <div class="container-fluid">
+    <div class="row">
 
-        <div id="filtertool-container"></div>
+      <div id="filtertool-container"></div>
 
 
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <span class="align-middle lead">1overheid: voor al uw overheidszaken.</span>
       </div>
     </div>
-  </main>
-  <footer>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <span class="align-middle lead">1overheid: voor al uw overheidszaken.</span>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
 
 <div class="modal fade contactModal" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-header" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="contact-modal-header">
-                        Contact
-                    </h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="contact-modal-header">
+          Contact
+        </h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Direct chatten</button>
-                </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Direct chatten</button>
+      </div>
 
-            </div>
-        </div>
     </div>
-  <script src="js/main.js"></script>
-  <script src="https://www.contenttoolsrijksoverheid.nl/releases/v1-1.12/filtertool-client-v1-1.12.min.js" type="text/javascript"></script>
-  <script>
-    FilterToolClient.init({
-      filterToolURL: 'https://api.contenttoolsrijksoverheid.nl/v1/filtertools/5a26a24416ecfb04dad76e6a',
-      language: 'nl-NL',
-      divElementId: 'filtertool-container',
-      showTitle: true,
-      showDescription: true
-    });
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script src="https://www.contenttoolsrijksoverheid.nl/releases/v1-1.12/filtertool-client-v1-1.12.min.js" type="text/javascript"></script>
+<script>
+  FilterToolClient.init({
+    filterToolURL: 'https://api.contenttoolsrijksoverheid.nl/v1/filtertools/5a26a24416ecfb04dad76e6a',
+    language: 'nl-NL',
+    divElementId: 'filtertool-container',
+    showTitle: true,
+    showDescription: true
+  });
+</script>
+<script src="js/functions.js"></script>
 
-    function addLocalEventListener(element, eventName, handler) {
-      if (element.addEventListener) {
-        element.addEventListener(eventName, handler);
-      } else { // IE voor versie 9
-        element.attachEvent('on' + eventName, handler);
-      }
-    }
+<!-- Dummy injects -->
+<div id="first" class="hidden">
+  <p><strong>Wilt u een andere achternaam gebruiken?</strong></p>
+  <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
+    Inloggen
+    <img src="img/digid-logo.svg" alt="digid">
+  </button>
+  <div class="afterLogin achternaam-formulier">
+    <dl>
+      <dt>Naam</dt>
+      <dd class="naam">Tobias Erik Simon Timo het Voorbeeld</dd>
+      <dt>Partnernaam</dt>
+      <dd class="partner-achternaam">van Fieldlab</dd>
+      <dt> Plaats</dt>
+      <dd class="plaats">Tilburg</dd>
+    </dl>
+    <form id="naam-keuze">
+      <legend>U heeft vier opties</legend>
+      <fieldset id="achternaam-fieldset">
+        <div class="form-group">
+          <input type="radio" value="het Voorbeeld" id="radiobtn-achternaam" name="achternaam">
+          <label for="radiobtn-achternaam">Uw eigen achternaam, dus: <span class="achternaam">het Voorbeeld</span></label>
+        </div>
+        <div class="form-group">
+          <input type="radio" value="van Fieldlab" id="radiobtn-partner" name="achternaam">
+          <label for="radiobtn-partner">De achternaam van uw partner, dus: <span class="partner-achternaam">van Fieldlab</span></label>
+        </div>
+        <div class="form-group">
+          <input type="radio" value="het Voorbeeld - van Fieldlab" id="radiobtn-achternaam-partner" name="achternaam">
+          <label for="radiobtn-achternaam-partner">Uw eigen achternaam - de achternaam van uw partner, dus: <span class="achternaam">het Voorbeeld</span> - <span class="partner-achternaam">van Fieldlab</span></label>
+        </div>
+        <div class="form-group">
+          <input type="radio" value="van Fieldlab - het Voorbeeld" id="radiobtn-partner-achternaam" name="achternaam">
+          <label for="radiobtn-partner-achternaam">De achternaam van uw partner - uw eigen achternaam, dus: <span class="partner-achternaam">van Fieldlab</span> - <span class="achternaam">het Voorbeeld</span></label>
+        </div>
+        <input type="submit" class="submit" value="Versturen"/>
+      </fieldset>
+    </form>
 
-    addLocalEventListener(
-        document.getElementById('filtertool-container'), 'showresults-post', function (e) {
-          // console.log("Filtertool was loaded: ", e)
-          $('#first').toggleClass('hidden').insertAfter('#filtertool-container-contentblock-body-0 p:last-of-type');
-
-          //insert
-          $('.filtertool-contentblock-body:contains("U kunt uw voorgenomen huwelijk digitaal melden op de website van uw gemeente. U doet dit met uw DigiD. Maar u kunt ook een afspraak maken aan het loket van het gemeentehuis.")').append(
-              $('#second'));
-
-          //show
-          $('.filtertool-contentblock-body #second').toggleClass('hidden');
-          //get link to Tilburg
-          $.get(
-              'https://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="huwelijksaangifte")and(postcode=5011)').done(
-              function (xml) {
-                var link = xml.getElementsByTagName("dcterms:identifier")[0];
-                if (link) {
-                  $('#huwelijksaangifte-link').attr('href', link.textContent);
-                } else {
-                  alert("Sorry, no link.");
-                }
-              });
-        }
-    );
-
-  </script>
-  <script src="js/functions.js"></script>
-
-  <!-- Dummy injects -->
-  <div id="first" class="hidden">
-    <h3>Wilt u een andere achternaam gebruiken?</h3>
-    <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
-        Inloggen
-        <img src="img/digid-logo.svg" alt="digid">
-    </button>
-    <div class="afterLogin">
-      <dl>
-        <dt>Naam </dt>
-        <dd>Tobias Erik Simon Timo het Voorbeeld</dd>
-        <dt>Partnernaam </dt>
-        <dd>van Fieldlab</dd>
-        <dt> Plaats </dt>
-        <dd> Tilburg </dd>
-      </dl>
-      <form id="naam-keuze">
-        <legend>U heeft vier opties </legend>
-        <fieldset>
-          <div class="form-group">
-            <input type="radio" value="Uw eigen achternaam" name="achternaam">
-            <label for="achternaam">Uw eigen achternaam, dus: het Voorbeeld</label>
+    <div class="modal hidden">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Bedankt</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
           </div>
-          <div class="form-group">
-            <input type="radio" value="De achternaam van uw partner" name="partner">
-            <label for="partner">De achternaam van uw partner, dus: van Fieldlab</label>
-          </div>
-          <div class="form-group">
-            <input type="radio" value="Uw eigen achternaam - de achternaam van uw partner" name="achternaam-partner">
-            <label for="achternaam-partner">Uw eigen achternaam - de achternaam van uw partner, dus: het Voorbeeld - van Fieldlab</label>
-          </div>
-          <div class="form-group">
-            <input type="radio" value="De achternaam van uw partner - uw eigen achternaam" name="partner-achternaam">
-            <label for="partner-achternaam">De achternaam van uw partner - uw eigen achternaam, dus: van Fieldlab - het Voorbeeld</label>
-          </div>
-          <input type="submit" class="submit" value="Versturen" />
-        </fieldset>
-      </form>
-
-      <div class="modal hidden">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3>Bedankt</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>
-                Uw keuze is verwerkt naar: het Voorbeeld - van Fieldlab
-              </p>
-              <p>
-                Uw zaaknummer is #000000
-              </p>
-            </div>
+          <div class="modal-body">
+            <p>
+              Uw keuze is verwerkt naar: <span id="selected-result"></span>
+            </p>
+            <p>
+              Uw zaaknummer is <span id="zaaknummer">#000000</span>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div id="second" class="hidden">
-    <h3>Melden bij gemeente</h3>
-    <p class="beforeLogin">
-      <h4>Wilt u uw huwelijk digitaal melden?</h4>
-      <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
-        Inloggen
-        <img src="img/digid-logo.svg" alt="digid">
-      </button>
-    </p>
-    <p class="afterLogin"><a href="https://www.tilburg.nl/inwoners/geboorte-trouwen-overlijden/trouwen/#notloadfromSC" id="huwelijksaangifte-link"
-                             target="_blank">Meld uw huwelijk bij uw gemeente Tilburg</a></p>
-  </div>
+<div id="second" class="hidden">
+  <h3>Melden bij gemeente</h3>
+  <p class="beforeLogin">
+  <h4>Wilt u uw huwelijk digitaal melden?</h4>
+  <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
+    Inloggen
+    <img src="img/digid-logo.svg" alt="digid">
+  </button>
+  </p>
+  <p class="afterLogin"><a href="https://www.tilburg.nl/inwoners/geboorte-trouwen-overlijden/trouwen/#notloadfromSC" id="huwelijksaangifte-link"
+                           target="_blank">Meld uw huwelijk bij uw gemeente Tilburg</a></p>
+</div>
 
-</body></html>
+</body>
+</html>
