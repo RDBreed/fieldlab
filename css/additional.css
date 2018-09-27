@@ -20,6 +20,11 @@ main a { text-decoration: underline;}
 legend { font-size:1.1rem; font-weight: bold;}
 .primary { color:var(--primary)}
 
+.cta {
+  color:var(--dark);
+  font-weight: bold;
+  text-transform: uppercase;
+}
 .hidden {
   left:-9999px;
   top:-9999px;

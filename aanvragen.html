@@ -187,27 +187,6 @@
         </div>
     <div class="col-lg-10 offset-lg-1 col-md-12 loggedInElm">
         <h1>Mijn actuele overheidszaken</h1>
-
-        <!-- popup with warning -->
-        <div class="modal alert" id="modalAlert">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2>Uw rijbewijs is bijna verlopen</h2>
-                <button type="button" class="close" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p> Op 20 november is uw rijbewijs verlopen en is deze niet meer geldig </p>
-              </div>
-              <div class="modal-footer">
-                <a class="cta" href="#"> Vraag nu verlenging van uw rijbewijs aan </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="module-cards">
             <div class="module-card">
                 <a href="#">
@@ -221,10 +200,13 @@
                     <p>Uw aanvraag voor een bouwvergunning is in behandeling. U krijgt een reactie over uiterlijk 2 weken.</p>
                 </a>
             </div>
-            <div class="module-card inactive">
+            <div class="module-card inactive alert">
                 <a href="#">
                     <h2 class="align-middle">Rijbewijs</h2>
                     <p>Let op: uw rijbewijs verloopt over 2 maanden.</p>
+                    <div class="cta">
+                      Nu regelen!
+                    </div>
                 </a>
             </div>
         </div>
@@ -390,13 +372,5 @@
       </div>
   </div>
   <script src="js/main.js"></script>
-  <script>
-  
-    //Onclose alert modal
-    $('.modal.alert button.close').click(function(){
-      $('.modal.alert').addClass('hidden');
-      return false;
-    });
-  </script>
 
 </body></html>
