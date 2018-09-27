@@ -140,4 +140,15 @@ jQuery(function ($) {
     return false;
   });
 
+  // If name has changed, change login name
+  var checked_option_radio = $('input:radio[name=achternaam]:checked').val();
+  // alert('Tobias ' +checked_option_radio );
+  $( "#radioValue" ).html( checked_option_radio );
+
+  $("#nameChange").click(function (e) {
+      var checked_option_radio = $('input:radio[name=achternaam]:checked').val();
+      // alert('Tobias ' +checked_option_radio );
+      $( "#radioValue" ).html( checked_option_radio );
+  });
+
 });

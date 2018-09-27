@@ -40,7 +40,10 @@
           <div class="dropdown loggedInElm">
             <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-              Tobias
+                    <span>U bent ingelogd als</span>
+                    <span class="defaultName">
+                      Tobias <span id="radioValue">het Voorbeeld</span>
+                    </span>
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="aanvragen.html">Mijn aanvragen</a>
@@ -198,7 +201,6 @@
 
       <div id="filtertool-container"></div>
 
-
     </div>
   </div>
 </main>
@@ -253,11 +255,13 @@
   </button>
   <div class="afterLogin achternaam-formulier">
     <dl>
-      <dt>Naam</dt>
-      <dd class="naam">Tobias Erik Simon Timo het Voorbeeld</dd>
+      <dt>Voornaam</dt>
+      <dd class="voornaam">Tobias</dd>
+      <dt>Achternaam</dt>
+      <dd class="achternaam">het Voorbeeld</dd>
       <dt>Partnernaam</dt>
       <dd class="partner-achternaam">van Fieldlab</dd>
-      <dt> Plaats</dt>
+      <dt>Plaats</dt>
       <dd class="plaats">Tilburg</dd>
     </dl>
     <form id="naam-keuze">
@@ -279,7 +283,7 @@
           <input type="radio" value="van Fieldlab - het Voorbeeld" id="radiobtn-partner-achternaam" name="achternaam">
           <label for="radiobtn-partner-achternaam">De achternaam van uw partner - uw eigen achternaam, dus: <span class="partner-achternaam">van Fieldlab</span> - <span class="achternaam">het Voorbeeld</span></label>
         </div>
-        <input type="submit" class="submit" value="Versturen"/>
+        <input type="submit" id="nameChange" class="submit" value="Versturen"/>
       </fieldset>
     </form>
 
