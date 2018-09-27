@@ -27,8 +27,8 @@ jQuery(function ($) {
       type: 'GET',
       dataType: 'json',
       success: function (json) {
-        $('.voornaam').text(
-            json.voornamen);
+        // $('.voornaam').text(
+        //     json.voornamen);
         $('.achternaam').text(
             (json.voorvoegselGeslachtsnaam
                 ? json.voorvoegselGeslachtsnaam
