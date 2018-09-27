@@ -117,7 +117,7 @@ jQuery(function ($) {
       type: 'POST',
       success: function (number) {
         console.log(number);
-        $('#zaaknummer').text(number);
+        $('#zaaknummer').text(number.substring(1,number.length-1));
       },
       error: function (e) {
         console.log(e);
@@ -149,9 +149,5 @@ jQuery(function ($) {
       $( "#radioValue" ).html( checked_option_radio );
   });
 
-  // Redirect to page after login
-  $('#loginBtn.homepage').click(function() {
-    location.href = 'aanvragen.html';
-  });
 
 });

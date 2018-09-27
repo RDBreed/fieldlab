@@ -46,10 +46,10 @@ html.loggedin .beforeLogin{ display:none; }
 .module-card { border-radius:0.25rem; }
 .module-card a { text-decoration: none; }
 
-.module-card.alert, .modal.alert { background: var(--warning); color:var(--dark) }
-.module-cards .module-card a h2, .modal.alert a { color:var(--dark) }
+.module-card.alert, .modal.alert .modal-content { background: var(--warning); color:var(--dark); }
+.module-cards .module-card a h2, .modal.alert a { color:var(--dark); }
 .module-card.alert a { padding-left:20px; }
-.module-card.alert a:before {
+.module-card.alert a:before, .modal.alert .modal-content:before {
   background:url('../img/icon-alert.svg') no-repeat 0 0;
   background-size: contain;
   content:"";
@@ -61,6 +61,26 @@ html.loggedin .beforeLogin{ display:none; }
   position: absolute;
 }
 
+.modal.alert { display:block; }
+.modal.alert .modal-dialog { max-width:860px }
+.modal.alert .modal-header,
+.modal.alert .modal-footer { border:0; text-align: center;}
+.modal.alert .modal-header { padding-top:0.5rem; padding-bottom:0.5rem;}
+.modal.alert .modal-header,
+.modal.alert .modal-body { padding-left:80px;}
+.modal.alert h2 { margin-top:20px;}
+.modal.alert a.cta {
+  background:var(--dark);
+  border-radius:10px;
+  color:var(--white);
+  display:inline-block;
+  margin:auto;
+  padding:0.15em 15px;
+  text-align:center;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.modal.alert p { margin:0;}
 
 .blauwe-button { float:right; }
 .blauwe-button a { display:inline-block; margin:0 0.5em; }
@@ -125,10 +145,7 @@ button.filtertool-contentblock-toggle-button {
   padding: 0.4em 10px 0.4em 10px;
 }
 
-.filtertool-feedback-section {
-  background:var(--light);
-}
-
+.filtertool-feedback-section { background:var(--light); }
 .filtertool-feedback-section li button{
   background:none!important;
   border:none;
@@ -148,7 +165,6 @@ button.beforeLogin img {
   height: 38px;
   width:38px;
 }
-
 
 .filtertool .filtertool-questions-form .filtertool-question-progress .filtertool-question-progress-bar,
 .filtertool .filtertool-questions-form .filtertool-question-progress .filtertool-question-progress-bar .filtertool-question-progress-bar-progress { height: 10px;}
