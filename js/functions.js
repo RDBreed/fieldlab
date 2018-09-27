@@ -115,10 +115,9 @@ jQuery(function ($) {
     $.ajax({
       url: `${mijnAppUrl}personen/${bsn}/wijzignaamgebruik?naamgebruik=${selectedValue}`,
       type: 'POST',
-      dataType: 'json',
-      success: function (json) {
-        console.log(json);
-        $('#zaaknummer').text(json);
+      success: function (number) {
+        console.log(number);
+        $('#zaaknummer').text(number);
       },
       error: function (e) {
         console.log(e);
