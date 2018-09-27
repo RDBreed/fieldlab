@@ -27,10 +27,8 @@ jQuery(function ($) {
       type: 'GET',
       dataType: 'json',
       success: function (json) {
-        $('.naam').text(
-            json.voornamen + (json.voorvoegselGeslachtsnaam ? ' '
-            + json.voorvoegselGeslachtsnaam : '') + ' '
-            + json.geslachtsnaam);
+        $('.voornaam').text(
+            json.voornamen);
         $('.achternaam').text(
             (json.voorvoegselGeslachtsnaam
                 ? json.voorvoegselGeslachtsnaam
@@ -112,15 +110,14 @@ jQuery(function ($) {
   $("#naam-keuze input.submit").click(function () {
     $('#naam-keuze').toggleClass('hidden');
     $('.afterLogin .modal').toggleClass('hidden');
-    let selectedValue = $('.form-group input[type=radio]:checked').val();
+    let selectedValue = $('input:radio[name=achternaam]:checked').val();
     //get personal data
     $.ajax({
       url: `${mijnAppUrl}personen/${bsn}/wijzignaamgebruik?naamgebruik=${selectedValue}`,
       type: 'POST',
-      dataType: 'json',
-      success: function (json) {
-        console.log(json);
-        $('#zaaknummer').text(json);
+      success: function (number) {
+        console.log(number);
+        $('#zaaknummer').text(number);
       },
       error: function (e) {
         console.log(e);
@@ -130,6 +127,7 @@ jQuery(function ($) {
       }
     });
     $('#selected-result').text(selectedValue);
+    $('#radioValue').text(selectedValue);
     return false;
   });
 
