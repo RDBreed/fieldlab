@@ -151,4 +151,9 @@ jQuery(function ($) {
       $( "#radioValue" ).html( checked_option_radio );
   });
 
+  // Redirect to page after login
+  $('#loginBtn.homepage').click(function() {
+    location.href = 'aanvragen.html';
+  });
+
 });

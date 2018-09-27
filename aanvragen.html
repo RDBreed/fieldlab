@@ -34,7 +34,10 @@
                     </div>
                     <div class="dropdown loggedInElm">
                         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Tobias
+                          <span>U bent ingelogd als</span>
+                          <span class="defaultName">
+                            Tobias <span id="radioValue">het Voorbeeld</span>
+                          </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="aanvragen.html">Mijn aanvragen</a>
@@ -133,7 +136,6 @@
                     </ul>
                 </div>
                 <div class="modal-footer">
-
                 </div>
             </form>
         </div>
@@ -151,7 +153,6 @@
                 </div>
                 <form>
                     <div class="modal-body">
-
                             <div class="messages">
                                 <div class="message">
                                     <div class="avatar">
@@ -163,8 +164,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="messageForm">
                                 <div class="inputField">
                                     <input class="form-control form-control-lg" type="text" placeholder="Typ hier uw vraag">
@@ -173,24 +172,41 @@
                                     <button type="button" class="btn btn-primary btn-lg">Verstuur</button>
                                 </div>
                             </div>
-
-
                     </div>
                     <div class="modal-footer">
-
                     </div>
                 </form>
             </div>
         </div>
-    </div>
+</div>
   <main role="main">
     <div class="container-fluid">
       <div class="row">
-    <div class="col-lg-10 offset-lg-1 col-md-12 loggedOutElm">
-        <h1>Alle overheidszaken</h1>
-    </div>
+        <div class="col-lg-10 offset-lg-1 col-md-12 loggedOutElm">
+            <h1>Alle overheidszaken</h1>
+        </div>
     <div class="col-lg-10 offset-lg-1 col-md-12 loggedInElm">
         <h1>Mijn actuele overheidszaken</h1>
+
+<!-- popup with warning -->
+<div class="modal-dialog modal-dialog-centered alert wide">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Uw rijbewijs is bijna verlopen</h2>
+    </div>
+    <div class="modal-body">
+      <p>
+        Op 20 november is uw rijbewijs verlopen en is deze niet meer geldig
+      </p>
+      <a class="cta" href="#">
+        Vraag nu verlenging van uw rijbewijs aan
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
         <div class="module-cards">
             <div class="module-card">
                 <a href="#">
@@ -204,7 +220,7 @@
                     <p>Uw aanvraag voor een bouwvergunning is in behandeling. U krijgt een reactie over uiterlijk 2 weken.</p>
                 </a>
             </div>
-            <div class="module-card inactive">
+            <div class="module-card inactive alert">
                 <a href="#">
                     <h2 class="align-middle">Rijbewijs</h2>
                     <p>Let op: uw rijbewijs verloopt over 2 maanden.</p>
@@ -353,27 +369,25 @@
             </div>
         </div>
     </div>
-</footer>
+  </footer>
 
-<div class="modal fade contactModal" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-header" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="contact-modal-header">
-                        Contact
-                    </h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Direct chatten</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
+  <div class="modal fade contactModal" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-header" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title" id="contact-modal-header">
+                      Contact
+                  </h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Direct chatten</button>
+              </div>
+          </div>
+      </div>
+  </div>
   <script src="js/main.js"></script>
 
 </body></html>

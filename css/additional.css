@@ -18,6 +18,7 @@ h3, h4 { font-weight: bold;}
 h4 { font-size:1.1rem}
 main a { text-decoration: underline;}
 legend { font-size:1.1rem; font-weight: bold;}
+.primary { color:var(--primary)}
 
 .hidden {
   left:-9999px;
@@ -42,9 +43,24 @@ html.loggedin .beforeLogin{ display:none; }
   border:0;
 }
 
-.module-card a {
-  text-decoration: none;
+.module-card { border-radius:0.25rem; }
+.module-card a { text-decoration: none; }
+
+.module-card.alert, .modal.alert { background: var(--warning); color:var(--dark) }
+.module-cards .module-card a h2, .modal.alert a { color:var(--dark) }
+.module-card.alert a { padding-left:20px; }
+.module-card.alert a:before {
+  background:url('../img/icon-alert.svg') no-repeat 0 0;
+  background-size: contain;
+  content:"";
+  display:inline-block;
+  height:38px;
+  width:38px;
+  left:20px;
+  top:20px;
+  position: absolute;
 }
+
 
 .blauwe-button { float:right; }
 .blauwe-button a { display:inline-block; margin:0 0.5em; }
