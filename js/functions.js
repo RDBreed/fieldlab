@@ -27,10 +27,8 @@ jQuery(function ($) {
       type: 'GET',
       dataType: 'json',
       success: function (json) {
-        $('.naam').text(
-            json.voornamen + (json.voorvoegselGeslachtsnaam ? ' '
-            + json.voorvoegselGeslachtsnaam : '') + ' '
-            + json.geslachtsnaam);
+        $('.voornaam').text(
+            json.voornamen);
         $('.achternaam').text(
             (json.voorvoegselGeslachtsnaam
                 ? json.voorvoegselGeslachtsnaam
@@ -112,7 +110,7 @@ jQuery(function ($) {
   $("#naam-keuze input.submit").click(function () {
     $('#naam-keuze').toggleClass('hidden');
     $('.afterLogin .modal').toggleClass('hidden');
-    let selectedValue = $('.form-group input[type=radio]:checked').val();
+    let selectedValue = $('input:radio[name=achternaam]:checked').val();
     //get personal data
     $.ajax({
       url: `${mijnAppUrl}personen/${bsn}/wijzignaamgebruik?naamgebruik=${selectedValue}`,
@@ -130,6 +128,7 @@ jQuery(function ($) {
       }
     });
     $('#selected-result').text(selectedValue);
+    $('#radioValue').text(selectedValue);
     return false;
   });
 
@@ -138,17 +137,6 @@ jQuery(function ($) {
     $('.achternaam-formulier .modal').toggleClass('hidden');
     $('#naam-keuze').toggleClass('hidden');
     return false;
-  });
-
-  // If name has changed, change login name
-  var checked_option_radio = $('input:radio[name=achternaam]:checked').val();
-  // alert('Tobias ' +checked_option_radio );
-  $( "#radioValue" ).html( checked_option_radio );
-
-  $("#nameChange").click(function (e) {
-      var checked_option_radio = $('input:radio[name=achternaam]:checked').val();
-      // alert('Tobias ' +checked_option_radio );
-      $( "#radioValue" ).html( checked_option_radio );
   });
 
 });
