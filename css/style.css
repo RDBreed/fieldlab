@@ -19,7 +19,7 @@
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
-  --light: #e9ecef;
+  --light: #e5f0f9;
   --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -6788,58 +6788,11 @@ main {
 footer {
   padding: 30px 0 30px 0; }
   footer .lead {
-    font-family: "PT Sans";
     font-style: italic;
     font-size: 1.25rem;
     color: #6c757d; }
 
-@font-face {
-  font-family: 'PT Sans';
-  src: url("../fonts/PTSans-BoldItalic.woff2") format("woff2"), url("../fonts/PTSans-BoldItalic.woff") format("woff"), url("../fonts/PTSans-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style: italic; }
 
-@font-face {
-  font-family: 'PT Sans';
-  src: url("../fonts/PTSans-Italic.woff2") format("woff2"), url("../fonts/PTSans-Italic.woff") format("woff"), url("../fonts/PTSans-Italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'PT Sans';
-  src: url("../fonts/PTSans-Bold.woff2") format("woff2"), url("../fonts/PTSans-Bold.woff") format("woff"), url("../fonts/PTSans-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'PT Sans Caption';
-  src: url("../fonts/PTSans-Caption.woff2") format("woff2"), url("../fonts/PTSans-Caption.woff") format("woff"), url("../fonts/PTSans-Caption.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'PT Sans Caption';
-  src: url("../fonts/PTSans-CaptionBold.woff2") format("woff2"), url("../fonts/PTSans-CaptionBold.woff") format("woff"), url("../fonts/PTSans-CaptionBold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'PT Sans';
-  src: url("../fonts/PTSans-Regular.woff2") format("woff2"), url("../fonts/PTSans-Regular.woff") format("woff"), url("../fonts/PTSans-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'PT Sans Narrow';
-  src: url("../fonts/PTSans-NarrowBold.woff2") format("woff2"), url("../fonts/PTSans-NarrowBold.woff") format("woff"), url("../fonts/PTSans-NarrowBold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'PT Sans Narrow';
-  src: url("../fonts/PTSans-Narrow.woff2") format("woff2"), url("../fonts/PTSans-Narrow.woff") format("woff"), url("../fonts/PTSans-Narrow.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
 
 .loginmodal .modal-title img {
   width: 40px;

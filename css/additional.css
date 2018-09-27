@@ -39,8 +39,8 @@ html.loggedin .beforeLogin{ display:none; }
 
 .blauwe-button a { display:inline-block; margin:0 0.5em; }
 .blauwe-button img {
-  height:32px;
-  width:32px;
+  height:38px;
+  width:38px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -87,3 +87,5 @@ button.filtertool-contentblock-toggle-button {
   border-radius: 0;
   padding: 0.4em 10px 0.4em 10px;
 }
+
+#filtertool-container .filtertool-question-progress-bar-progress { background-color:var(--primary)}
