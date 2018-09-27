@@ -1,6 +1,7 @@
 // Put all your code in your document ready area
 jQuery(function ($) {
-  const mijnAppUrl = 'https://testen.solviteers.nl/MijnApp/api/v1/';
+  const corsFixer = 'https://cors-anywhere.herokuapp.com/';
+  const mijnAppUrl = `${corsFixer}https://testen.solviteers.nl/MijnApp/api/v1/`;
   const bsn = '950051998';
   const token = 'Bearer'
       + ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDExMTk5MTAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTM5MjUvIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MzkyNS8ifQ.lxlaXPg7V8aMT5ViLanqUH6kBmCHx_VGN0oQ9wgNvUg';
@@ -10,7 +11,7 @@ jQuery(function ($) {
   const getDataFromExternalResources = function () {
     //get link supplied by SC
     $.get(
-        `https://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="${upl}")and(postcode=${postcode})`).done(
+        `${corsFixer}https://zoekdienst.overheid.nl/sru/Search?version=1.2&operation=searchRetrieve&x-connection=sc&startRecord=1&maximumRecords=10&query=(uniformeProductnaam="${upl}")and(postcode=${postcode})`).done(
         function (xml) {
           var link = xml.getElementsByTagName("dcterms:identifier")[0];
           if (link) {
