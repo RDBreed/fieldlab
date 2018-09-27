@@ -108,14 +108,16 @@ html.loggedin .beforeLogin{ display:none; }
 .filtertool-contentblock-body .form-group { margin:0; }
 
 .filtertool .filtertool-questions-form .filtertool-question { background: none;}
-.filtertool-questions-form{
-    background: var(--light);
-    padding: 15px;
-}
+.filtertool .filtertool-feedback-section .filtertool-feedback-list,
+.filtertool-questions-form,
+.filtertool-feedback-section { background: var(--light); }
+.filtertool-questions-form,
+.filtertool-feedback-section { padding: 15px; }
 
 .filtertool input.submit,
 .filtertool-nav button,
 .filtertool-groupingButton button,
+.filtertool-feedback-footer button,
 button.filtertool-savePDFButton,
 button.filtertool-groupingButton {
     margin: 0 20px 0 0;
@@ -133,6 +135,7 @@ button.filtertool-groupingButton {
 .filtertool input.submit:disabled,
 .filtertool-nav button:disabled,
 .filtertool-groupingButton button:disabled,
+.filtertool-feedback-footer button:disabled,
 button.filtertool-savePDFButton:disabled,
 button.filtertool-groupingButton:disabled {
    -webkit-transition: background 0.3s ease-in-out;
@@ -150,7 +153,6 @@ button.filtertool-contentblock-toggle-button {
   padding: 0.4em 10px 0.4em 10px;
 }
 
-.filtertool-feedback-section { background:var(--light); }
 .filtertool-feedback-section li button{
   background:none!important;
   border:none;
