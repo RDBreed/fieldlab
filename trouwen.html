@@ -52,11 +52,6 @@
               <img src="img/digid-logo.svg" alt="digid">
             </button>
           </div>
-          <div class="blauwe-button">
-            <a href="#" title="Blauwe Button">
-              <img src="img/blauwe-knop.svg" title="Blauwe Button"/>
-            </a>
-          </div>
           <div>
             <a class="btn btn-light" data-toggle="modal" data-target="#contactModal" href="#">Contact</a>
           </div>
@@ -251,9 +246,9 @@
 
 <!-- Dummy injects -->
 <div id="first" class="hidden">
-  <p><strong>Wilt u een andere achternaam gebruiken?</strong></p>
+  <h4>Wilt u een andere achternaam gebruiken?</h4>
   <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
-    Inloggen
+    <span>Direct aanpassen</span>
     <img src="img/digid-logo.svg" alt="digid">
   </button>
   <div class="afterLogin achternaam-formulier">
@@ -266,8 +261,8 @@
       <dd class="plaats">Tilburg</dd>
     </dl>
     <form id="naam-keuze">
-      <legend>U heeft vier opties</legend>
       <fieldset id="achternaam-fieldset">
+        <legend>U heeft vier opties</legend>
         <div class="form-group">
           <input type="radio" value="het Voorbeeld" id="radiobtn-achternaam" name="achternaam">
           <label for="radiobtn-achternaam">Uw eigen achternaam, dus: <span class="achternaam">het Voorbeeld</span></label>
@@ -313,15 +308,23 @@
 
 <div id="second" class="hidden">
   <h3>Melden bij gemeente</h3>
-  <p class="beforeLogin">
-  <h4>Wilt u uw huwelijk digitaal melden?</h4>
-  <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
-    Inloggen
-    <img src="img/digid-logo.svg" alt="digid">
-  </button>
-  </p>
-  <p class="afterLogin"><a href="https://www.tilburg.nl/inwoners/geboorte-trouwen-overlijden/trouwen/#notloadfromSC" id="huwelijksaangifte-link"
-                           target="_blank">Meld uw huwelijk bij uw gemeente Tilburg</a></p>
+  <div class="beforeLogin">
+    <h4>Wilt u uw huwelijk digitaal melden?</h4>
+    <button type="button" class="btn btn-light loginBtn beforeLogin" data-toggle="modal" data-target="#loginForm">
+      <span>Direct melden</span>
+      <img src="img/digid-logo.svg" alt="digid">
+    </button>
+  </div>
+  <div class="afterLogin">
+    <a href="https://www.tilburg.nl/inwoners/geboorte-trouwen-overlijden/trouwen/#notloadfromSC"
+        id="huwelijksaangifte-link"
+        target="_blank">Meld uw huwelijk bij uw gemeente Tilburg</a>
+    <div class="blauwe-button">
+      <a href="#" title="Blauwe Button">
+        <img src="img/blauwe-knop.svg" title="Blauwe Button"/>
+      </a>
+    </div>
+  </div>
 </div>
 
 </body>
