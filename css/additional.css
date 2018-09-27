@@ -42,6 +42,10 @@ html.loggedin .beforeLogin{ display:none; }
   border:0;
 }
 
+.module-card a {
+  text-decoration: none;
+}
+
 .blauwe-button { float:right; }
 .blauwe-button a { display:inline-block; margin:0 0.5em; }
 .blauwe-button img {
