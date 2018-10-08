@@ -66,7 +66,6 @@ jQuery(function ($) {
 
       },
       error: function (e) {
-        console.log(e);
       },
       beforeSend: function (xhr) {
         xhr.setRequestHeader('Authorization', token);
@@ -96,7 +95,7 @@ jQuery(function ($) {
         $('.filtertool-contentblock-body #second').toggleClass('hidden');
         $('.filtertool-contentblock-body #first').toggleClass('hidden');
 
-        if(sessionStorage.loginStatus === 'loggedIn'){
+        if (sessionStorage.loginStatus === 'loggedIn') {
           getDataFromExternalResources();
         }
 
@@ -116,11 +115,14 @@ jQuery(function ($) {
       url: `${mijnAppUrl}personen/${bsn}/wijzignaamgebruik?naamgebruik=${selectedValue}`,
       type: 'POST',
       success: function (number) {
-        console.log(number);
-        $('#zaaknummer').text(number.substring(1,number.length-1));
+        let zaaknummer = '11111';
+        if (number && !isNaN(number.substring(1, number.length - 1))) {
+          zaaknummer = number.substring(1, number.length - 1);
+        }
+        $('#zaaknummer').text(zaaknummer);
       },
       error: function (e) {
-        console.log(e);
+        $('#zaaknummer').text('11111');
       },
       beforeSend: function (xhr) {
         xhr.setRequestHeader('Authorization', token);
@@ -140,14 +142,11 @@ jQuery(function ($) {
 
   // If name has changed, change login name
   var checked_option_radio = $('input:radio[name=achternaam]:checked').val();
-  // alert('Tobias ' +checked_option_radio );
-  $( "#radioValue" ).html( checked_option_radio );
+  $("#radioValue").html(checked_option_radio);
 
   $("#nameChange").click(function (e) {
-      var checked_option_radio = $('input:radio[name=achternaam]:checked').val();
-      // alert('Tobias ' +checked_option_radio );
-      $( "#radioValue" ).html( checked_option_radio );
+    var checked_option_radio = $('input:radio[name=achternaam]:checked').val();
+    $("#radioValue").html(checked_option_radio);
   });
-
 
 });
